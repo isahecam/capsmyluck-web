@@ -2,6 +2,9 @@
   "$schema": "https://unpkg.com/knip@6/schema.json",
   "tags": ["-lintignore"],
   "ignoreIssues": {
-    "components/ui/**": ["exports", "types"]
+    "components/ui/**": ["exports", "types"],
+    "components/motion/**": ["exports", "types"],
+    "lib/ease.ts": ["exports"],
+    ".agents/**": ["files"]
   }
 }
