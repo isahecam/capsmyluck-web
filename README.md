@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img alt="Banner" src="https://shieldcn.dev/header/gradient.svg?title=Caps+My+Luck&amp;subtitle=Tienda+de+gorras+en+Rafael+Lara+Grajales%2C+Puebla.&amp;logo=lu%3AShoppingBag&amp;mode=dark&amp;border=false" />
+</p>
 
-## Getting Started
+<p align="center">
+  <a href="https://www.instagram.com/caps_my_luck_67/"><img alt="CapsMyLuck" src="https://shieldcn.dev/badge/CapsMyLuck-c96442.svg?size=xs&amp;variant=secondary&amp;logo=lu%3AShoppingBag" /></a>
+  <a href="https://github.com/isahecam/capsmyluck-web/commits/main"><img alt="Último commit" src="https://shieldcn.dev/github/last-commit/isahecam/capsmyluck-web.svg?size=xs&amp;variant=secondary" /></a>
+  <a href="https://github.com/isahecam/capsmyluck-web/stargazers"><img alt="Estrellas en GitHub" src="https://shieldcn.dev/github/stars/isahecam/capsmyluck-web.svg?size=xs&amp;variant=secondary" /></a>
+</p>
 
-First, run the development server:
+## Descripción general
+
+Caps My Luck es el sitio web de una tienda de gorras de alta calidad y estilo único, con entregas en Rafael Lara Grajales, Puebla.
+
+## Tecnologías
+
+- [Next.js 16](https://nextjs.org) (App Router)
+- [React 19](https://react.dev) con el [React Compiler](https://react.dev/learn/react-compiler)
+- [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS v4](https://tailwindcss.com)
+- [shadcn/ui](https://ui.shadcn.com) sobre [Base UI](https://base-ui.com), con iconos de [Lucide](https://lucide.dev)
+- [Oxc](https://oxc.rs) (oxlint, oxfmt), [Knip](https://knip.dev), [Lefthook](https://lefthook.dev) y [commitlint](https://commitlint.js.org)
+- [pnpm](https://pnpm.io)
+
+## Primeros pasos
+
+### Requisitos previos
+
+- Node.js
+- pnpm 12
+
+### 1. Instalar
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/isahecam/capsmyluck-web.git
+cd capsmyluck-web
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Ejecutar la aplicación
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Abre [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+### Scripts
 
-To learn more about Next.js, take a look at the following resources:
+| Comando          | Descripción                                              |
+| ---------------- | -------------------------------------------------------- |
+| `pnpm dev`       | Inicia el servidor de desarrollo                         |
+| `pnpm build`     | Genera la compilación de producción                      |
+| `pnpm start`     | Sirve la compilación de producción                       |
+| `pnpm typecheck` | Genera los tipos de rutas y revisa los tipos             |
+| `pnpm lint`      | Revisa el código con oxlint                              |
+| `pnpm fmt`       | Da formato con oxfmt                                     |
+| `pnpm knip`      | Encuentra archivos, exportaciones y dependencias sin uso |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contacto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+¿Dudas, ideas o comentarios? Contáctame a través de mi [sitio web](https://isahecam.dev), en [GitHub](https://github.com/isahecam) o en [X](https://x.com/isahecam).
