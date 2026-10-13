@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono, Pirata_One, Barlow } from "next/font/google";
 
 import "./globals.css";
+import { Header } from "@/components/sections/header";
 import { cn } from "@/lib/utils";
 
 const pirataOne = Pirata_One({
@@ -13,7 +14,7 @@ const pirataOne = Pirata_One({
 const barlow = Barlow({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: "500",
+  weight: "400",
 });
 
 const geistMono = Geist_Mono({
@@ -39,7 +40,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         barlow.variable,
         pirataOne.variable,
       )}>
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
