@@ -19,5 +19,5 @@
     "shadcn/require-static-classes": "error"
   },
   "env": { "browser": true, "node": true },
-  "ignorePatterns": ["components/ui/**"]
+  "ignorePatterns": ["components/ui/**", "components/icons/**", ".agents/**", ".claude/skills/**"]
 }
