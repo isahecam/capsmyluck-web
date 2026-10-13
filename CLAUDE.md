@@ -4,6 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 @AGENTS.md
 
+## Proyecto
+
+**Caps My Luck** es el sitio web de una tienda de gorras, con entregas en Rafael Lara Grajales, Puebla (fuente: `metadata` en `app/layout.tsx`).
+
+Todo el proyecto está en **español de México** (`<html lang="es-MX">`): contenido visible, metadatos, textos de UI y mensajes de commit. Escribe el contenido nuevo en ese idioma.
+
 ## Commands
 
 Package manager is **pnpm** (pinned via `packageManager`).
