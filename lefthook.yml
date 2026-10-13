@@ -1,0 +1,30 @@
+# The repo doesn't use Git LFS. Without this, lefthook runs `git-lfs pre-push`, which opens extra
+# SSH connections to the remote (each one asks for the key passphrase).
+skip_lfs: true
+
+pre-commit:
+  piped: true
+  jobs:
+    - name: oxlint
+      glob: "*.{js,jsx,ts,tsx,mjs,cjs}"
+      run: pnpm oxlint --fix --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true
+
+    - name: oxfmt
+      glob: "*.{js,jsx,ts,tsx,mjs,cjs,json,jsonc,md,css,scss,yml,yaml}"
+      run: pnpm oxfmt --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true
+
+commit-msg:
+  jobs:
+    - name: commitlint
+      run: pnpm commitlint --edit {1}
+
+# Sequential on purpose: on Windows, `parallel: true` hangs the hook in the terminal after the jobs
+# finish (https://github.com/evilmartians/lefthook/issues/1256).
+pre-push:
+  jobs:
+    - name: typecheck
+      run: pnpm typecheck
+    - name: knip
+      run: pnpm knip
