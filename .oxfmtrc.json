@@ -1,6 +1,12 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
-  "ignorePatterns": [".agents", ".claude/skills", "components/ui"],
+  "ignorePatterns": [
+    ".agents",
+    ".claude/skills",
+    "components/ui",
+    "components/motion",
+    "lib/ease.ts"
+  ],
   "sortImports": true,
   "bracketSameLine": true,
   "sortTailwindcss": {
