@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono, Pirata_One, Barlow } from "next/font/google";
 
 import "./globals.css";
+import { Footer } from "@/components/sections/footer";
 import { Header } from "@/components/sections/header";
 import { cn } from "@/lib/utils";
 
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
