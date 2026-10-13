@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="es-MX"
       className={cn(
         "h-full",
         "antialiased",
