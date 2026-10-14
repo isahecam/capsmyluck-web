@@ -36,7 +36,7 @@ const DELIVERY_OPTIONS = [
   {
     icon: TruckIcon,
     title: "A domicilio",
-    description: "Te la llevamos a tu casa dentro de la zona de entrega. [COSTO DE ENVÍO]",
+    description: "Por el momento no contamos con envíos a domicilio. ¡Muy pronto!",
   },
 ];
 
