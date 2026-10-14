@@ -162,6 +162,14 @@
   }
 }
 
+@utility bg-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    color-mix(in oklab, currentColor 8%, transparent) 0 0.75rem,
+    transparent 0.75rem 1.5rem
+  );
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee,
   .animate-marquee-vertical {
