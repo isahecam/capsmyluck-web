@@ -144,6 +144,31 @@
   --shadow-2xl: 12px 12px 0px 0px var(--shadow-color);
 }
 
+/* Animaciones de `components/motion/marquee.tsx`: la duración llega por `style` y `--gap` la define el componente. */
+@theme {
+  --animate-marquee: marquee linear infinite;
+  --animate-marquee-vertical: marquee-vertical linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-vertical {
+    animation-play-state: paused;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
