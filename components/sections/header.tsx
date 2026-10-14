@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Instagram } from "@/components/icons/instagram";
+import { AnnouncementBar } from "@/components/sections/announcement-bar";
 import { MobileMenu } from "@/components/sections/mobile-menu";
 import { Logo } from "@/components/shared/logo";
 import { buttonVariants } from "@/components/ui/button";
@@ -8,8 +9,10 @@ import { INSTAGRAM_HANDLE, INSTAGRAM_URL, SECTION_LINKS } from "@/lib/constants"
 
 export function Header() {
   return (
-    <header className="w-full px-4 py-2">
-      <div className="mx-auto flex max-w-5xl items-center gap-2 sm:justify-between">
+    <header className="w-full">
+      <AnnouncementBar />
+
+      <div className="mx-auto flex max-w-5xl items-center gap-2 px-4 py-2 sm:justify-between">
         <MobileMenu />
 
         <Link href="/" aria-label="Caps My Luck, inicio">
