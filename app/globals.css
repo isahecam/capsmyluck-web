@@ -170,6 +170,15 @@
   );
 }
 
+/* Tiñe el mapa base con el color de fondo del contenedor (p. ej. `bg-accent`) sin afectar los marcadores. */
+@utility map-tint {
+  isolation: isolate;
+
+  & .maplibregl-canvas {
+    mix-blend-mode: luminosity;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee,
   .animate-marquee-vertical {
@@ -212,5 +221,23 @@
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
+  }
+  .maplibregl-popup-content {
+    @apply rounded-none! bg-transparent! p-0! shadow-none!;
+  }
+  .maplibregl-popup-tip {
+    @apply hidden!;
+  }
+  .maplibregl-ctrl-attrib {
+    @apply rounded-md! border! border-border! bg-background! text-muted-foreground! shadow-sm!;
+  }
+  .maplibregl-ctrl-attrib a {
+    @apply text-muted-foreground!;
+  }
+  .maplibregl-ctrl-attrib a:hover {
+    @apply text-foreground!;
+  }
+  .maplibregl-ctrl-attrib-button {
+    @apply bg-transparent! dark:invert;
   }
 }
