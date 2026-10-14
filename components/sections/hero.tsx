@@ -18,7 +18,7 @@ export function Hero() {
   const playing = choice ?? !reduceMotion;
 
   return (
-    <section className="relative flex h-dvh flex-1 flex-col justify-center px-6 py-24 text-secondary-foreground">
+    <section className="relative flex min-h-dvh flex-col justify-center px-6 py-24 text-secondary-foreground">
       <VideoHero playing={playing} />
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-secondary/70" />
 
