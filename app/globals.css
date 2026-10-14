@@ -170,6 +170,15 @@
   );
 }
 
+/* Tiñe el mapa base con el color de fondo del contenedor (p. ej. `bg-accent`) sin afectar los marcadores. */
+@utility map-tint {
+  isolation: isolate;
+
+  & .maplibregl-canvas {
+    mix-blend-mode: luminosity;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee,
   .animate-marquee-vertical {
