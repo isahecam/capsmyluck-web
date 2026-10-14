@@ -1,7 +1,6 @@
 import { MapPinIcon, StoreIcon, TruckIcon } from "lucide-react";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
 const STEPS = [
   {
@@ -58,29 +57,27 @@ export function Delivery() {
         </header>
 
         <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {STEPS.map(({ title, description }, index) => {
-            const last = index === STEPS.length - 1;
-            return (
-              <li key={title} className="flex">
-                <Card size="sm" variant={last ? "primary" : "outline"} className="flex-1">
-                  <CardHeader>
-                    <span
-                      aria-hidden="true"
-                      className={cn(
-                        "mb-2 font-heading text-5xl leading-none text-primary",
-                        last && "text-primary-foreground",
-                      )}>
-                      {index + 1}
-                    </span>
-                    <CardTitle variant="label">
-                      <h3>{title}</h3>
-                    </CardTitle>
-                    <CardDescription>{description}</CardDescription>
-                  </CardHeader>
-                </Card>
-              </li>
-            );
-          })}
+          {STEPS.map(({ title, description }, index) => (
+            <li key={title} className="group/step flex">
+              <Card
+                size="sm"
+                className="flex-1 group-nth-4/step:bg-primary group-nth-4/step:text-primary-foreground">
+                <CardHeader>
+                  <span
+                    aria-hidden="true"
+                    className="mb-2 font-heading text-5xl leading-none text-primary group-nth-4/step:text-primary-foreground">
+                    {index + 1}
+                  </span>
+                  <CardTitle>
+                    <h3 className="font-sans! font-bold">{title}</h3>
+                  </CardTitle>
+                  <CardDescription className="group-nth-4/step:text-primary-foreground">
+                    {description}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </li>
+          ))}
         </ol>
 
         <div className="grid gap-8 lg:grid-cols-5">
@@ -94,8 +91,8 @@ export function Delivery() {
                   <Card size="sm">
                     <CardHeader>
                       <Icon aria-hidden="true" className="mb-1 size-6" />
-                      <CardTitle variant="display">
-                        <h4>{title}</h4>
+                      <CardTitle>
+                        <h4 className="tracking-wider">{title}</h4>
                       </CardTitle>
                       <CardDescription>{description}</CardDescription>
                     </CardHeader>
@@ -106,12 +103,14 @@ export function Delivery() {
           </div>
 
           <aside aria-labelledby="zona-titulo" className="flex lg:col-span-2">
-            <Card size="sm" variant="stripes" className="flex-1">
+            <Card
+              size="sm"
+              className="flex-1 bg-transparent bg-stripes text-accent-foreground shadow-none ring-2 ring-primary ring-inset">
               <CardHeader>
                 <p className="text-xs font-semibold tracking-widest text-primary uppercase">
                   Zona de entrega
                 </p>
-                <CardTitle variant="display-lg">
+                <CardTitle className="text-4xl leading-none font-normal tracking-normal normal-case">
                   <h3 id="zona-titulo">¿Estás fuera de la zona?</h3>
                 </CardTitle>
               </CardHeader>
