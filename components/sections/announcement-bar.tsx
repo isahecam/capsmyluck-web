@@ -14,7 +14,7 @@ export function AnnouncementBar() {
     <div className="relative border-b bg-background px-12 py-2.5 text-foreground">
       <p className="mx-auto max-w-5xl text-center text-xs font-semibold tracking-widest text-balance uppercase sm:text-sm">
         <MapPinIcon aria-hidden="true" className="mr-2 inline size-4 align-text-bottom" />
-        Solo entregas en Rafael Lara Grajales
+        Solo entregas en Rafael Lara Grajales, Puebla
         <span className="mt-0.5 block text-accent sm:mt-0 sm:ml-2 sm:inline">
           · Sin envíos foráneos
         </span>
