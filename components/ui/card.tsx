@@ -1,37 +1,19 @@
 import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
-
-const cardVariants = cva(
-  "group/card flex flex-col gap-(--card-spacing) overflow-hidden py-(--card-spacing) text-sm [--card-spacing:--spacing(8)] has-[>img:first-child]:pt-0 data-[size=sm]:[--card-spacing:--spacing(5)] *:[img:first-child]:rounded-none *:[img:last-child]:rounded-none",
-  {
-    variants: {
-      variant: {
-        default: "bg-card text-card-foreground shadow-sm ring-1 ring-foreground/5",
-        outline: "text-current ring-1 ring-current",
-        primary: "bg-primary text-primary-foreground",
-        stripes: "bg-stripes text-current ring-2 ring-primary",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-)
 
 function Card({
   className,
   size = "default",
-  variant = "default",
   ...props
-}: React.ComponentProps<"div"> &
-  VariantProps<typeof cardVariants> & { size?: "default" | "sm" }) {
+}: React.ComponentProps<"div"> & { size?: "default" | "sm" }) {
   return (
     <div
       data-slot="card"
       data-size={size}
-      data-variant={variant}
-      className={cn(cardVariants({ variant, className }))}
+      className={cn(
+        "group/card flex flex-col gap-(--card-spacing) overflow-hidden bg-card py-(--card-spacing) text-sm text-card-foreground shadow-sm ring-1 ring-foreground/5 [--card-spacing:--spacing(8)] has-[>img:first-child]:pt-0 data-[size=sm]:[--card-spacing:--spacing(5)] *:[img:first-child]:rounded-none *:[img:last-child]:rounded-none",
+        className
+      )}
       {...props}
     />
   )
@@ -50,29 +32,14 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-const cardTitleVariants = cva("", {
-  variants: {
-    variant: {
-      default: "font-heading text-lg font-semibold tracking-wider uppercase",
-      label: "text-lg font-semibold tracking-wider uppercase",
-      display: "font-heading text-xl",
-      "display-lg": "font-heading text-4xl leading-none",
-    },
-  },
-  defaultVariants: {
-    variant: "default",
-  },
-})
-
-function CardTitle({
-  className,
-  variant = "default",
-  ...props
-}: React.ComponentProps<"div"> & VariantProps<typeof cardTitleVariants>) {
+function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-title"
-      className={cn(cardTitleVariants({ variant, className }))}
+      className={cn(
+        "font-heading text-lg font-semibold tracking-wider uppercase",
+        className
+      )}
       {...props}
     />
   )
@@ -82,10 +49,7 @@ function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-description"
-      className={cn(
-        "text-sm leading-relaxed group-data-[variant=default]/card:text-muted-foreground",
-        className
-      )}
+      className={cn("text-sm leading-relaxed text-muted-foreground", className)}
       {...props}
     />
   )
