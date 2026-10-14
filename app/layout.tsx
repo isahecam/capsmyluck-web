@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Pirata_One, Barlow } from "next/font/google";
+import { Geist_Mono, Pirata_One, Barlow_Condensed } from "next/font/google";
 
 import "./globals.css";
 import { Footer } from "@/components/sections/footer";
@@ -12,7 +12,7 @@ const pirataOne = Pirata_One({
   weight: "400",
 });
 
-const barlow = Barlow({
+const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
   variable: "--font-sans",
   weight: "400",
@@ -38,7 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         "antialiased",
         geistMono.variable,
         "font-sans",
-        barlow.variable,
+        barlowCondensed.variable,
         pirataOne.variable,
       )}>
       <body className="flex min-h-full flex-col">

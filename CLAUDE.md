@@ -31,11 +31,11 @@ Next.js 16 App Router + React 19, TypeScript strict, Tailwind CSS v4, shadcn/ui 
 
 ## Styling rules (enforced by lint)
 
-The `@shadcn/lint` oxlint plugin errors on raw colors, inline styles, arbitrary values, restyling shadcn components, and dynamic class strings (`shadcn/require-static-classes`). Use the theme tokens from `app/globals.css` (`bg-card`, `text-primary`, etc.) and component variants instead of ad-hoc classes. Compose classes with `cn` from `@/lib/utils` (re-exported from the `cn` package).
+The `@shadcn/lint` oxlint plugin errors on raw colors, inline styles, arbitrary values, and dynamic class strings (`shadcn/require-static-classes`); restyling shadcn components (`shadcn/no-restyle`) is only a warning. Use the theme tokens from `app/globals.css` (`bg-card`, `text-primary`, etc.) instead of ad-hoc colors. Compose classes with `cn` from `@/lib/utils` (re-exported from the `cn` package), which merges conflicting Tailwind classes.
 
-Theme lives entirely in `app/globals.css` as oklch CSS variables (`:root` and `.dark`). Fonts are set in `app/layout.tsx` via `next/font` CSS variables: `--font-sans` (Barlow), `--font-heading` (Pirata One), `--font-geist-mono`.
+Theme lives entirely in `app/globals.css` as oklch CSS variables (`:root` and `.dark`). Fonts are set in `app/layout.tsx` via `next/font` CSS variables: `--font-sans` (Barlow Condensed), `--font-heading` (Pirata One), `--font-geist-mono`.
 
-`components/ui/` holds shadcn-generated components (add with `pnpm dlx shadcn add <name>`); it is excluded from both oxlint and oxfmt, so don't hand-reformat it.
+`components/ui/` holds shadcn-generated components (add with `pnpm dlx shadcn add <name>`); it is excluded from both oxlint and oxfmt, so don't hand-reformat it. Keep these files exactly as shadcn generates them so a reinstall (`--overwrite`) loses nothing: don't add variants for one-off designs; style the component through `className` where it's used instead.
 
 ## Git hooks & commits (lefthook)
 

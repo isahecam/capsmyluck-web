@@ -144,9 +144,44 @@
   --shadow-2xl: 12px 12px 0px 0px var(--shadow-color);
 }
 
+/* Animaciones de `components/motion/marquee.tsx`: la duración llega por `style` y `--gap` la define el componente. */
+@theme {
+  --animate-marquee: marquee linear infinite;
+  --animate-marquee-vertical: marquee-vertical linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
+
+@utility bg-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    color-mix(in oklab, currentColor 8%, transparent) 0 0.75rem,
+    transparent 0.75rem 1.5rem
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-vertical {
+    animation-play-state: paused;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
   }
 
   body {
@@ -154,7 +189,24 @@
   }
 
   html {
-    @apply font-sans;
+    @apply scroll-smooth font-sans;
+  }
+
+  [id] {
+    @apply scroll-mt-10;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 5px;
   }
 
   button:not(:disabled),
