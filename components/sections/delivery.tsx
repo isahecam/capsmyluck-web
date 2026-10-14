@@ -69,9 +69,9 @@ export function Delivery() {
                     {index + 1}
                   </span>
                   <CardTitle>
-                    <h3 className="font-sans! font-bold">{title}</h3>
+                    <h3 className="font-sans! font-bold text-pretty">{title}</h3>
                   </CardTitle>
-                  <CardDescription className="group-nth-4/step:text-primary-foreground">
+                  <CardDescription className="text-pretty group-nth-4/step:text-primary-foreground">
                     {description}
                   </CardDescription>
                 </CardHeader>
@@ -92,9 +92,9 @@ export function Delivery() {
                     <CardHeader>
                       <Icon aria-hidden="true" className="mb-1 size-6" />
                       <CardTitle>
-                        <h4 className="tracking-wider">{title}</h4>
+                        <h4 className="tracking-wider text-pretty">{title}</h4>
                       </CardTitle>
-                      <CardDescription>{description}</CardDescription>
+                      <CardDescription className="text-pretty">{description}</CardDescription>
                     </CardHeader>
                   </Card>
                 </li>
@@ -111,10 +111,12 @@ export function Delivery() {
                   Zona de entrega
                 </p>
                 <CardTitle className="text-4xl leading-none font-normal tracking-normal normal-case">
-                  <h3 id="zona-titulo">¿Estás fuera de la zona?</h3>
+                  <h3 id="zona-titulo" className="text-pretty">
+                    ¿Estás fuera de la zona?
+                  </h3>
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="text-pretty">
                 <p>
                   ¡También queremos que tengas tu gorra! Escríbenos y cuéntanos dónde te encuentras.
                   Revisaremos las opciones disponibles para que puedas conseguir tu modelo favorito.
