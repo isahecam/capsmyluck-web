@@ -180,6 +180,8 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
   }
 
   body {
@@ -187,7 +189,24 @@
   }
 
   html {
-    @apply font-sans;
+    @apply scroll-smooth font-sans;
+  }
+
+  [id] {
+    @apply scroll-mt-10;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 5px;
   }
 
   button:not(:disabled),
