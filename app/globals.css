@@ -201,8 +201,10 @@
     @apply scroll-smooth font-sans;
   }
 
-  [id] {
-    @apply scroll-mt-10;
+  /* El header no es fijo, así que no hay nada que compensar; el `py-24` de cada sección ya deja
+     aire arriba, por lo que se resta para que el título quede cerca del borde al llegar al ancla. */
+  section[id] {
+    @apply -scroll-mt-16;
   }
 
   ::-webkit-scrollbar {
