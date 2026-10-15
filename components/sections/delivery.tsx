@@ -1,4 +1,4 @@
-import { MapPinIcon, StoreIcon, TruckIcon } from "lucide-react";
+import { MapPinIcon, TruckIcon } from "lucide-react";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -17,16 +17,11 @@ const STEPS = [
   },
   {
     title: "¡Estrena tu gorra!",
-    description: "Recíbela o pasa por ella y disfruta tu nuevo estilo.",
+    description: "Recíbela en el punto acordado y disfruta tu nuevo estilo.",
   },
 ];
 
 const DELIVERY_OPTIONS = [
-  {
-    icon: StoreIcon,
-    title: "En la tienda",
-    description: "Pasa por ella en nuestro horario, ya apartada.",
-  },
   {
     icon: MapPinIcon,
     title: "Punto de encuentro",
@@ -85,7 +80,7 @@ export function Delivery() {
             <h3 className="text-sm font-semibold tracking-widest text-primary uppercase">
               Formas de entrega
             </h3>
-            <ul className="grid items-start gap-4 sm:grid-cols-3">
+            <ul className="grid items-start gap-4 sm:grid-cols-2">
               {DELIVERY_OPTIONS.map(({ icon: Icon, title, description }) => (
                 <li key={title}>
                   <Card size="sm">
@@ -122,8 +117,7 @@ export function Delivery() {
                   Revisaremos las opciones disponibles para que puedas conseguir tu modelo favorito.
                 </p>
                 <p className="mt-3">
-                  ¿Estás cerca? Puedes recoger tu pedido en tienda o coordinar un punto de
-                  encuentro.
+                  ¿Estás cerca? Coordinamos un punto de encuentro para que recibas tu pedido.
                 </p>
               </CardContent>
             </Card>
