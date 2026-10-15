@@ -1,8 +1,8 @@
 import { BrandsMarquee } from "@/components/sections/brands-marquee";
 import { Catalog } from "@/components/sections/catalog";
 import { Delivery } from "@/components/sections/delivery";
+import { DeliveryZone } from "@/components/sections/delivery-zone";
 import { Hero } from "@/components/sections/hero";
-import { Store } from "@/components/sections/store";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <BrandsMarquee />
       <Catalog />
       <Delivery />
-      <Store />
+      <DeliveryZone />
     </main>
   );
 }

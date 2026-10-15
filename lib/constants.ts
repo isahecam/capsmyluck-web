@@ -23,5 +23,5 @@ export const WHATSAPP_URL = `https://wa.me/${requireEnv(
 export const SECTION_LINKS = [
   { label: "Catálogo", href: "#catalogo" },
   { label: "Entrega", href: "#entrega" },
-  { label: "Tienda", href: "#tienda" },
+  { label: "Zona", href: "#zona" },
 ];
