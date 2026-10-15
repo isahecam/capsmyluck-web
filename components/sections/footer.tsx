@@ -2,6 +2,7 @@ import { cacheLife } from "next/cache";
 import Link from "next/link";
 
 import { Logo } from "@/components/shared/logo";
+import { LogoWordmark } from "@/components/shared/logo-wordmark";
 import { buttonVariants } from "@/components/ui/button";
 import { INSTAGRAM_HANDLE, INSTAGRAM_URL, SECTION_LINKS, WHATSAPP_URL } from "@/lib/constants";
 
@@ -86,14 +87,7 @@ export function Footer() {
         </div>
       </div>
 
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 1000 190"
-        className="mx-auto mt-6 -mb-2 block w-full max-w-6xl fill-primary/20 font-heading">
-        <text x="0" y="200" fontSize="250" textLength="1000" lengthAdjust="spacingAndGlyphs">
-          Caps My Luck
-        </text>
-      </svg>
+      <LogoWordmark className="mx-auto mt-6 -mb-2 max-w-6xl" />
     </footer>
   );
 }

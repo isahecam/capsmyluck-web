@@ -4,8 +4,16 @@ import { MenuIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
+import { LogoWordmark } from "@/components/shared/logo-wordmark";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { SECTION_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -38,6 +46,9 @@ export function MobileMenu() {
             ))}
           </ul>
         </nav>
+        <SheetFooter className="overflow-hidden pb-0">
+          <LogoWordmark className="-mb-2" />
+        </SheetFooter>
       </SheetContent>
     </Sheet>
   );
