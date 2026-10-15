@@ -4,6 +4,7 @@ import { Geist_Mono, Pirata_One, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/sections/footer";
 import { Header } from "@/components/sections/header";
+import { ScrollToTop } from "@/components/shared/scroll-to-top";
 import { cn } from "@/lib/utils";
 
 const pirataOne = Pirata_One({
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         {children}
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );
